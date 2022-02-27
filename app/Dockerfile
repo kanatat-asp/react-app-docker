@@ -1,4 +1,5 @@
-FROM        alpine as builder
+FROM        alpine
+# FROM        alpine as builder
 RUN         apk add --update nodejs npm
 WORKDIR     /app
 COPY        ./package.json ./

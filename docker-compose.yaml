@@ -6,6 +6,8 @@ services:
     restart: unless-stopped
     # ports:
     #   - 3:$APP_DOCKER_PORT
+    volumes:
+      - app-build:/app/build
   nginx:
     depends_on:
       - app
@@ -14,4 +16,8 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./test:/usr/share/nginx/html
+      # - ./test:/usr/share/nginx/html
+      - app-build:/usr/share/nginx/html
+
+volumes:
+  app-build:
