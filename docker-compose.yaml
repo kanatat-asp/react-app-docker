@@ -7,7 +7,9 @@ services:
     # ports:
     #   - 3:$APP_DOCKER_PORT
   nginx:
-    image: nginx
-    restart: unless-stopped
+    depends_on:
+      - app
+    build: ./nginx
+    restart: always
     ports:
       - 80:80
