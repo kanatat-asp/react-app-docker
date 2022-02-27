@@ -8,28 +8,28 @@ services:
     #   - 3:$APP_DOCKER_PORT
     volumes:
       - app-build:/app/build
-  # app-2:
-  #   build: ./app-2
-  #   restart: unless-stopped
-  #   # ports:
-  #   #   - 3:$APP_DOCKER_PORT
-  #   volumes:
-  #     - app-2-build:/app/build
+  app-2:
+    build: ./app-2
+    restart: unless-stopped
+    # ports:
+    #   - 3:$APP_DOCKER_PORT
+    volumes:
+      - app-2-build:/app/build
   nginx:
     depends_on:
       - app
-      # - app-2
+      - app-2
     build: ./nginx
     restart: always
     ports:
       - 80:80
     volumes:
       # - ./test:/usr/share/nginx/html
-      # - app-build:/usr/share/nginx/html
-      - app-build:/usr/share/nginx/html/app
+      - app-build:/usr/share/nginx/html
       # - app-build:/usr/share/nginx/html/app
-      # - app-2-build:/usr/share/nginx/html/app-2
+      # - app-build:/usr/share/nginx/html/app
+      - app-2-build:/usr/share/app-2/html
 
 volumes:
   app-build:
-  # app-2-build:
+  app-2-build:
