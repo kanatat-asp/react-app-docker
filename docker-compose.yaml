@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  app:
+    build: ./app
+    restart: unless-stopped
+    # ports:
+    #   - 3:$APP_DOCKER_PORT
+  nginx:
+    image: nginx
+    restart: unless-stopped
+    ports:
+      - 80:80
