@@ -13,5 +13,5 @@ services:
     restart: always
     ports:
       - 80:80
-    # volumes:
-    #   - ./test:/usr/share/nginx/html
+    volumes:
+      - ./test:/usr/share/nginx/html
