@@ -25,7 +25,7 @@ services:
       - 80:80
     volumes:
       # - ./test:/usr/share/nginx/html
-      - app-build:/usr/share/nginx/html
+      # - app-build:/usr/share/nginx/html
       - app-build:/usr/share/nginx/html/app
       # - app-build:/usr/share/nginx/html/app
       # - app-2-build:/usr/share/nginx/html/app-2
