@@ -2,9 +2,8 @@ FROM        alpine as builder
 RUN         apk add --update nodejs npm
 WORKDIR     /app
 COPY        ./package.json ./
-RUN         npm ci
+RUN         npm install
 COPY        . .
-# RUN         npm ci
 RUN         npm run build
 
 FROM        nginx
