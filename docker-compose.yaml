@@ -18,7 +18,7 @@ services:
   nginx:
     depends_on:
       - app
-      - app-2
+      # - app-2
     build: ./nginx
     restart: always
     ports:
